@@ -58,7 +58,7 @@ li {
 }
 
 li.done {
-    text-decoration: line-through;
+    text-decoration: underline;
     color: #888;
 }
 
