@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Flask Todo API</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>📝 Welcome to Flask Todo API</h1>
-    <p>Use the endpoints below via Postman/curl or visit <a href="/tasks">Visual Task Manager</a></p>
-    <ul>
-        <li>GET /api/tasks → List all tasks</li>
-        <li>GET /api/tasks/&lt;id&gt; → Get task by ID</li>
-        <li>POST /api/tasks → Add new task (JSON: {"title": "task name"})</li>
-        <li>PUT /api/tasks/&lt;id&gt; → Update task</li>
-        <li>DELETE /api/tasks/&lt;id&gt; → Delete task</li>
-    </ul>
+    <div class="container">
+        <h1>📝 Welcome to Flask Todo API</h1>
+        <p>Use the endpoints below via Postman/curl or visit <a href="/tasks">Visual Task Manager</a></p>
+        <ul>
+            <li>GET /api/tasks → List all tasks</li>
+            <li>GET /api/tasks/&lt;id&gt; → Get task by ID</li>
+            <li>POST /api/tasks → Add new task (JSON: {"title": "task name"})</li>
+            <li>PUT /api/tasks/&lt;id&gt; → Update task (JSON: {"title": "...", "done": true/false})</li>
+            <li>DELETE /api/tasks/&lt;id&gt; → Delete task</li>
+        </ul>
+    </div>
 </body>
 </html>
