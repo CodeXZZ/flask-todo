@@ -3,36 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Flask Todo App</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">   
-    <!-- url_for(...): This is a powerful Flask function used to build a URL for a specific function or file based on its name. -->
-     <!-- 'static': This is the name of the special "view function" or endpoint in Flask that is configured to serve static files (like CSS, JavaScript, and images). -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>📝 Flask Todo App</h1>
+        <h1>📝 Visual Todo Manager</h1>
 
         <form action="{{ url_for('add_task') }}" method="POST">
             <input type="text" name="title" placeholder="Add a new task" required>
             <button type="submit">Add</button>
         </form>
 
-        <!-- class="...": Sets the CSS class for the <li> element.
-
-        'done' if task.done else '': This is a Jinja conditional expression (similar to a Python ternary operator).
-
-        task.done: Accesses the done attribute (a boolean, True or False) of the current task object.
-
-        If task.done is True, the class is set to 'done'. This CSS class would typically style the task 
-        (e.g., by adding a strikethrough or changing the background color) to indicate completion.
-
-        If task.done is False, the class is set to an empty string (''), meaning no special styling is applied. -->
-
         <ul>
             {% for task in tasks %}
                 <li class="{{ 'done' if task.done else '' }}">
                     {{ task.title }}
                     <div class="actions">
-                        <a href="{{ url_for('update_task', task_id=task.id) }}">✔</a> <!--generates the URL that points to the Python function named update_task on your server.-->
+                        <a href="{{ url_for('update_task', task_id=task.id) }}">✔</a>
                         <a href="{{ url_for('delete_task', task_id=task.id) }}">❌</a>
                     </div>
                 </li>

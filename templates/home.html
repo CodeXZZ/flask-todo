@@ -6,16 +6,13 @@
 </head>
 <body>
     <h1>📝 Welcome to Flask Todo API</h1>
-    <p>This is a simple REST API built with Flask + SQLite + SQLAlchemy.</p>
-
-    <h2>Endpoints:</h2>
+    <p>Use the endpoints below via Postman/curl or visit <a href="/tasks">Visual Task Manager</a></p>
     <ul>
         <li>GET /api/tasks → List all tasks</li>
-        <li>POST /api/tasks → Add a new task</li>
-        <li>PUT /api/tasks/&lt;id&gt; → Update a task</li>
-        <li>DELETE /api/tasks/&lt;id&gt; → Delete a task</li>
+        <li>GET /api/tasks/&lt;id&gt; → Get task by ID</li>
+        <li>POST /api/tasks → Add new task (JSON: {"title": "task name"})</li>
+        <li>PUT /api/tasks/&lt;id&gt; → Update task</li>
+        <li>DELETE /api/tasks/&lt;id&gt; → Delete task</li>
     </ul>
-    
-    <p>You can test using <strong>Postman</strong> or <strong>curl</strong>.</p>
 </body>
 </html>
